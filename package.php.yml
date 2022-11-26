@@ -16,7 +16,6 @@ devDeps:
   dn-bundle-plugin: '*'
   jphp-core: '*'
   jphp-zend-ext: '*'
-  jphp-httpclient-ext: '*'
 
 doc:
   url-prefix: https://github.com/silentdeath76/jphp-yandexDisc-ext/blob/master/api-docs/
