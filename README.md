@@ -28,9 +28,17 @@ $token = \yandex\YandexAPI::getToken($clientID, $clientSecret, 'Полученн
 
 <br>
 
-##### Работа с диском
+### Работа с диском
 
 ```php
 $disc = \yandex\YandexAPI::disc($token->getAccessToken());
-$disc->info(); // вернет информацию об аккаунте
+$disc->info();              // вернет информацию об аккаунте, занятое\свободное место на диске
+$disc->getFiles(0, 100);    // вернет 100 первых записей
+$disc->upload(\php\io\File::of("path/to/file.txt"), "path/in/our/disc");
+```
+
+
+### Подключение пакета через jphp
+```
+ jppm add jphp-yandex-disc@git+https://github.com/silentdeath76/jphp-yandex-disc
 ```
