@@ -8,7 +8,7 @@
 #### Properties
 
 - `->`[`logged`](#prop-logged) : `bool`
-- `->`[`disc`](#prop-disc) : [`YandexDisc`](https://github.com/silentdeath76/jphp-yandexDisc-ext/blob/master/api-docs/classes/yandex/api/YandexDisc.md)
+- `->`[`disc`](#prop-disc) : [`YandexDisc`](https://github.com/silentdeath76/jphp-yandex-disc/blob/master/api-docs/classes/yandex/api/YandexDisc.md)
 
 ---
 

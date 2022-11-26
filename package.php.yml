@@ -18,7 +18,7 @@ devDeps:
   jphp-zend-ext: '*'
 
 doc:
-  url-prefix: https://github.com/silentdeath76/jphp-yandexDisc-ext/blob/master/api-docs/
+  url-prefix: https://github.com/silentdeath76/jphp-yandex-disc/blob/master/api-docs/
   langs: { en: English, ru: Русский }
 
 config:
