@@ -1,0 +1,41 @@
+name: jphp-yandex-disc
+version: 1.0.0
+Descrition: Package for work with yandex disc API
+
+deps:
+  jphp-httpclient-ext: '*'
+
+plugins:
+  - Doc
+
+sources:
+  - src
+
+devDeps:
+  tester: '*'
+  dn-bundle-plugin: '*'
+  jphp-core: '*'
+  jphp-zend-ext: '*'
+  jphp-httpclient-ext: '*'
+
+doc:
+  url-prefix: https://github.com/silentdeath76/jphp-yandexDisc-ext/blob/master/api-docs/
+  langs: { en: English, ru: Русский }
+
+config:
+  ignore:
+    - /*.ini
+    - /sandbox/**
+    - /*.iml
+    - /.git/**
+    - /examples/**
+    - /.idea/**
+
+develnext-bundle:
+  version: 1.0.0
+  name: Yandex Disc
+  author: silentrs
+  icon: develnext/bundle/yandexDisc/icon32.png
+  description: Bundle for work with yandex disc API
+  group: Ethernet
+  class: develnext\bundle\yandexDisc\YandexDiscBundle
