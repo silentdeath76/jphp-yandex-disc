@@ -6,6 +6,11 @@ namespace yandex\api\dto;
 
 use InvalidArgumentException;
 
+/**
+ * Class ErrorDTO
+ * @package yandex\api\dto
+ * @packages yandex
+ */
 class ErrorDTO
 {
     /**

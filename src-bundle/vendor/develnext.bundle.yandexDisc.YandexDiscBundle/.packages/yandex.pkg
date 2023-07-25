@@ -1,0 +1,5 @@
+[classes]
+yandex\YandexAPI
+yandex\api\YandexDisc
+yandex\api\dto\ErrorDTO
+yandex\api\dto\TokenDTO

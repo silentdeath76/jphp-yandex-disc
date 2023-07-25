@@ -5,9 +5,11 @@ namespace yandex;
 use yandex\api\dto\TokenDTO;
 use yandex\api\YandexDisc;
 
-use httpclient\HttpClient;
-//use bundle\http\HttpClient; // TODO uncommented if need make bundle and comment other import
 
+/**
+ * Class YandexAPI
+ * @packages yandex
+ */
 class YandexAPI
 {
     const BASE_API_URL = 'https://cloud-api.yandex.net/v1/disk/resources';
@@ -41,7 +43,7 @@ class YandexAPI
      */
     public static function getToken($clientID, $clientSecret, $code)
     {
-        $http = new HttpClient();
+        $http = self::getHttpClient();
         $http->responseType = 'JSON';
         $response = $http->post(self::OATH_API_URL . 'token', [
             "grant_type" => "authorization_code",
@@ -63,7 +65,7 @@ class YandexAPI
      */
     public static function refreshToken($refreshToken, $clientID, $clientSecret)
     {
-        $http = new HttpClient();
+        $http = self::getHttpClient();
         $http->responseType = 'JSON';
         $response = $http->post(self::OATH_API_URL . 'token', [
             "grant_type" => "refresh_token",
@@ -84,5 +86,14 @@ class YandexAPI
     public static function disc($token)
     {
         return YandexDisc::of($token);
+    }
+
+    public static function getHttpClient()
+    {
+        if (class_exists(\httpclient\HttpClient::class)) {
+            return new \httpclient\HttpClient();
+        }
+
+        return new \bundle\http\HttpClient();
     }
 }

@@ -3,7 +3,11 @@
 
 namespace yandex\api\dto;
 
-
+/**
+ * Class TokenDTO
+ * @package yandex\api\dto
+ * @packages yandex
+ */
 class TokenDTO
 {
     private $accessToken;

@@ -9,8 +9,12 @@ use php\lang\IllegalArgumentException;
 use php\lib\str;
 
 use httpclient\HttpClient;
-//use bundle\http\HttpClient; // TODO uncommented if need make bundle and comment other import
 
+/**
+ * Class YandexDisc
+ * @package yandex\api
+ * @packages yandex
+ */
 final class YandexDisc
 {
     /**
@@ -46,7 +50,7 @@ final class YandexDisc
     {
         $this->token = $token;
 
-        $this->http = new HttpClient();
+        $this->http = YandexAPI::getHttpClient();
         $this->http->responseType = 'JSON';
         $this->http->headers["Authorization"] = 'OAuth ' . $this->token;
     }
@@ -364,8 +368,12 @@ final class YandexDisc
     {
         $method = str::upper($method);
 
-        $request = $this->http->execute($method, $url, $params);
-        // $request = $this->http->execute($url, $method, $params); // for develnext IDE
+        if ($this->http instanceof \httpclient\HttpClient) {
+            $request = $this->http->execute($method, $url, $params);
+        } else {
+            $request = $this->http->execute($url, $method, $params);
+        }
+
         $response = $request->body();
 
         if (($status = $request->statusCode()) >= 400) {        // error
